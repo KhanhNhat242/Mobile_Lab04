@@ -3,12 +3,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import Cau2a from './components/2_a';
 import TikiPay from './components/tikiPay/TikiPayy'
 import Cau2c from './components/2_c';
+import Cau2b from './components/2_b';
 
 export default function App() {
   return (
     // <Cau2a />
     // <TikiPay />
-    <Cau2c />
+    // <Cau2c />
+    <Cau2b />
   );
 }
 
