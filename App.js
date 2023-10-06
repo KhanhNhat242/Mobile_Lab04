@@ -8,9 +8,9 @@ import Cau2b from './components/2_b';
 export default function App() {
   return (
     // <Cau2a />
-    // <TikiPay />
+    <TikiPay />
     // <Cau2c />
-    <Cau2b />
+    // <Cau2b />
   );
 }
 

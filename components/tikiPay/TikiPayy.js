@@ -12,11 +12,13 @@ function TikiPayy() {
     const [codeInput, setCodeInput] = useState('')
     const [isDiscount, setIsDiscount] = useState(false)
     const [lastPrice, setLastPrice] = useState(price)
+    const [priceBefore, setPriceBefore] = useState(200000)
     
     const handleInc = () => {
         setQuantity(quantity + 1)
         setPrice(prev => prev * (quantity + 1))
         setIsDiscount(false)
+        setPriceBefore(prev => prev * (quantity + 1) + 60000)
     }
 
     const handleDesc = () => {
@@ -24,6 +26,7 @@ function TikiPayy() {
             setQuantity(prevQuan => prevQuan - 1)
             setPrice(140000 * (quantity - 1))
             setIsDiscount(false)
+            setPriceBefore(140000 * (quantity - 1) + 60000)
         }
         else
             alert('Số lượng không hợp lệ')
@@ -48,6 +51,13 @@ function TikiPayy() {
         }
     }
 
+    const handleOrder = () => {
+        alert('Đặt hàng thành công')
+        setPrice(140000)
+        setQuantity(1)
+        setPriceBefore(200000)
+    }
+
     // console.log(quantity)
     // console.log(price)
     // console.log(isDiscount)
@@ -61,7 +71,7 @@ function TikiPayy() {
                         <Text style={styles.itemTxt}>Nguyên hàm tích phân và ứng dụng</Text>
                         <Text style={styles.itemTxt}>Cung cấp bởi Tiki Trading</Text>
                         <Text style={styles.price}>{price} đ</Text>
-                        <Text style={styles.priceBefore}>200.000 đ</Text>
+                        <Text style={styles.priceBefore}>{priceBefore}</Text>
                         <Image style={styles.line} source={require('../../assets/Rectangle40.png')} />
                         <View style={styles.number}>
                             <View style={styles.numberWrapper}>
@@ -102,7 +112,7 @@ function TikiPayy() {
                     <Text style={styles.lastMoneyTxt}>Thành tiền</Text>
                     <Text style={styles.lastMoney}>{isDiscount == true ? lastPrice : price}</Text>
                 </View>
-                <TouchableOpacity style={styles.btnOrder}>
+                <TouchableOpacity style={styles.btnOrder} onPress={handleOrder}>
                     <Text style={styles.orderTxt}>TIẾN HÀNH ĐẶT HÀNG</Text>
                 </TouchableOpacity>
             </View>
