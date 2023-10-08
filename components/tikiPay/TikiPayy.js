@@ -70,8 +70,8 @@ function TikiPayy() {
                     <View style={styles.itemDetail}>
                         <Text style={styles.itemTxt}>Nguyên hàm tích phân và ứng dụng</Text>
                         <Text style={styles.itemTxt}>Cung cấp bởi Tiki Trading</Text>
-                        <Text style={styles.price}>{price} đ</Text>
-                        <Text style={styles.priceBefore}>{priceBefore}</Text>
+                        <Text style={styles.price}>140000 đ</Text>
+                        <Text style={styles.priceBefore}>200000</Text>
                         <Image style={styles.line} source={require('../../assets/Rectangle40.png')} />
                         <View style={styles.number}>
                             <View style={styles.numberWrapper}>
